@@ -1,0 +1,73 @@
+# Secrets
+keys.txt
+*.env
+.env.*
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+
+# JavaScript / generated builds
+node_modules/
+dist/
+
+# Logs
+logs/
+*.log
+
+# Temp and generated artifacts
+tmp_extract/
+__design_extract__/
+tmp_*.png
+tmp_*.py
+problems_*.png
+flowboard_test.png
+*.spec.ts
+
+# Playwright / browser state
+.playwright-mcp/
+.playwright-cli/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Inbox archive and local runtime noise
+Team Inbox/processed/
+Team/messages/archive/*.json
+
+# Lock files created by local process tooling
+Team/tasks/*.lock
+Owner's Inbox/*.lock
+*.lock
+
+# Machine-generated session resumption manifest — rebuilt on every start/end
+Team/tasks/RESUME.json
+Team/runtime/jobs/archive/*.json
+Team/runtime/approvals/resolved/*.json
+
+# Agent Brain local runtime state
+scripts/agent_brain/data/logs/
+scripts/agent_brain/data/sessions/
+scripts/agent_brain/data/sandbox/
+scripts/agent_brain/__pycache__/
+scripts/agent_brain/tools/__pycache__/
+
+# Claude Code agent worktrees — ephemeral, not part of repo history
+.claude/worktrees/
+
+# Why Engine local runtime data
+.why-engine/
+
+# Binary archives — too large for git, keep locally only
+*.zip
+*.tar.gz
+*.tar
+
+# Keep intentional tracked files
+!package.json
