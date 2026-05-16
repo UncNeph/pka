@@ -1,0 +1,17 @@
+name: voice
+version: 0.1.0
+description: Optional voice input and output layer for PKA operator workflows.
+category: communication
+platform: any
+requires:
+  - type: python
+    value: ">=3.11"
+provides:
+  agents: []
+  hooks: []
+  scripts: []
+  capabilities:
+    - voice-input
+    - voice-output
+entry:
+docs: README.md

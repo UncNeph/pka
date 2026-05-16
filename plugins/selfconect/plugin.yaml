@@ -1,0 +1,19 @@
+name: selfconect
+version: 0.1.0
+description: Windows inter-terminal injection through PostMessage for agent-to-agent communication.
+category: communication
+platform: windows
+requires:
+  - type: python
+    value: ">=3.11"
+  - type: env
+    value: "Windows desktop session"
+provides:
+  agents: []
+  hooks: []
+  scripts: []
+  capabilities:
+    - inter-terminal-injection
+    - windows-postmessage
+entry:
+docs: README.md

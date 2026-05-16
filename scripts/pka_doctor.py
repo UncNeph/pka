@@ -33,6 +33,7 @@ REQUIRED_PATHS = [
 HISTORY_FILE = LOGS_DIR / "pka_validation_history.jsonl"
 LATEST_REPORT = REPORTS_DIR / "PKA_LATEST_VALIDATION_REPORT.md"
 OBS_REPORT = REPORTS_DIR / "PKA_OBSERVABILITY_REPORT.md"
+PLUGIN_REGISTRY = ROOT / "plugins" / "registry.yaml"
 
 
 def check_paths() -> list[str]:
@@ -190,6 +191,44 @@ def check_health_surfaces() -> list[str]:
     return issues
 
 
+def load_plugins() -> tuple[list[dict[str, str]], str]:
+    if not PLUGIN_REGISTRY.exists():
+        return [], "no plugins installed (registry missing)"
+
+    text = PLUGIN_REGISTRY.read_text(encoding="utf-8")
+    if not text.strip():
+        return [], "no plugins installed"
+
+    plugins: list[dict[str, str]] = []
+    current: dict[str, str] | None = None
+
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or line == "plugins:":
+            continue
+        if line == "plugins: []":
+            return [], "no plugins installed"
+        if line.startswith("- "):
+            if current:
+                plugins.append(current)
+            current = {}
+            line = line[2:].strip()
+            if ":" in line:
+                key, value = line.split(":", 1)
+                current[key.strip()] = value.strip().strip('"').strip("'")
+            continue
+        if current is not None and ":" in line:
+            key, value = line.split(":", 1)
+            current[key.strip()] = value.strip().strip('"').strip("'")
+
+    if current:
+        plugins.append(current)
+
+    if not plugins:
+        return [], "no plugins installed"
+    return plugins, "plugins installed"
+
+
 def main() -> int:
     checks = [
         ("python", check_python()),
@@ -216,6 +255,18 @@ def main() -> int:
                 print(f"  - {issue}")
         else:
             print(f"- {name}: PASS")
+
+    plugins, plugin_note = load_plugins()
+    print("- plugins: INFO")
+    print(f"  - plugin_count: {len(plugins)}")
+    if plugins:
+        for plugin in plugins:
+            name = plugin.get("name", "unknown")
+            version = plugin.get("version", "unknown")
+            category = plugin.get("category", "unknown")
+            print(f"  - {name} {version} ({category})")
+    else:
+        print(f"  - {plugin_note}")
 
     if total_issues == 0:
         print("- Overall: healthy")

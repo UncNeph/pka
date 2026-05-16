@@ -66,6 +66,14 @@ python scripts/gmags_doctor.py
 Policy cards (reference docs only — not runtime-enforced): `governance/policy_cards/<AGENT>.yaml`
 - `tools/why-engine/` — Root cause capture CLI; invoked by DEBUGGER after every confirmed fix
 
+## Plugin System
+Plugins live in `plugins/`. Each plugin is self-contained and never modifies
+core PKA files.
+
+See `plugins/README.md` for the authoring spec.
+
+Installed plugins are tracked in `plugins/registry.yaml`.
+
 ## Bench (not yet hired)
 
 ## Product Context
