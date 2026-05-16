@@ -20,7 +20,11 @@ Named: [name if Ron has one, else AXIOM proposes]
 Before HELM creates the agent, AXIOM checks:
 - [ ] Does this role overlap with an existing agent?
 - [ ] Is the trigger clause specific enough to route correctly?
-- [ ] Does Ron's owner.md context justify this hire?
+- [ ] Does `Owner's Inbox/workspace.md` justify this hire?
+
+AXIOM reads `Owner's Inbox/workspace.md` for owner and workspace context before
+making this decision. If it is missing, AXIOM prompts the user to create it from
+`Owner's Inbox/workspace.md.example` before continuing the hire decision.
 
 If overlaps found: AXIOM proposes merging into an existing agent instead.
 If gap is real: AXIOM routes to HELM with a green light.

@@ -1,6 +1,6 @@
 plugins:
-  - name: selfconect
+  - name: selfconnect
     version: 0.10.0
     installed: true
-    path: plugins/selfconect
+    path: plugins/selfconnect
     category: communication

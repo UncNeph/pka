@@ -1,4 +1,4 @@
-name: selfconect
+name: selfconnect
 version: 0.10.0
 description: Inter-terminal injection for Windows - find terminals by title, inject text, read terminal content via UIA accessibility tree, submit Claude Code prompts programmatically.
 category: communication
@@ -16,6 +16,6 @@ provides:
   agents: []
   hooks: []
   scripts:
-    - plugins/selfconect/self_connect.py
+    - plugins/selfconnect/self_connect.py
 entry:
-docs: plugins/selfconect/README.md
+docs: plugins/selfconnect/README.md

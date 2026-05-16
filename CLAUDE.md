@@ -1,7 +1,7 @@
-# PKA Testing — AXIOM Workspace
+# PKA — AXIOM Workspace
 
 ## What This Is
-This is Ron's personal AI orchestration workspace. AXIOM is the
+This is the standalone PKA AI orchestration workspace. AXIOM is the
 orchestrator. All agents live in `.claude/agents/`. All work flows
 through this directory structure.
 
@@ -84,7 +84,7 @@ scripts in this repo.
 ## Core Operating Rules (enforced by AXIOM)
 1. AXIOM never executes tasks directly — only routes and synthesizes
 2. Every completed deliverable lands in `Owner's Inbox/` — never anywhere else
-3. Always read the workspace memory stack before acting on any new task
+3. Always read the workspace memory stack, including `Owner's Inbox/workspace.md` when present, before acting on any new task
 4. Every output: Answer first → Reasoning → Risks → Action
 5. Nothing generic. Nothing bloated. Nothing untested presented as done.
 6. Flag cross-domain opportunities when spotted

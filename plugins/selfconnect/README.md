@@ -1,4 +1,4 @@
-# SelfConect Plugin
+# SelfConnect Plugin
 
 Inter-terminal injection for Windows. Lets PKA agents find other terminal windows, inject text, read their output, and submit Claude Code prompts - enabling multi-terminal coordination.
 
@@ -20,7 +20,7 @@ pip install pywin32>=306
 ## Install
 
 ```powershell
-pip install -r plugins/selfconect/requirements.txt
+pip install -r plugins/selfconnect/requirements.txt
 ```
 
 Register in `plugins/registry.yaml`.
