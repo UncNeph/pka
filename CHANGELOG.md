@@ -1,7 +1,5 @@
 # Changelog
 
-# Changelog
-
 All notable changes to the PKA workspace should be recorded here.
 
 ## 0.9.0 - 2026-05-14

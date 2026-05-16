@@ -24,7 +24,7 @@ from .memory import MemoryStore
 from .tools import TOOL_REGISTRY, execute_tool, get_openai_tools_schema, set_approval_callback
 
 _SYSTEM_PROMPT_TEMPLATE = """\
-You are Agent Brain, an autonomous AI assistant running in Ron's PKA Testing workspace.
+You are Agent Brain, an autonomous AI assistant running in the PKA workspace.
 
 IDENTITY:
 - You have access to tools for web search, file I/O, shell execution, memory, and optional configured SSH hosts.

@@ -10,7 +10,7 @@ Read these files at the start of every new chat in this folder:
 2. `VERSION`
 3. `CHANGELOG.md`
 4. `CLAUDE.md`
-5. `Owner's Inbox/owner.md`
+5. `Owner's Inbox/workspace.md`
 6. `Team/handoff.md`
 7. `Team/status.md`
 
@@ -47,4 +47,4 @@ When consequential work changes the workspace state, keep memory current by upda
 When using confidence language, all agents must follow `Team/CONFIDENCE_VOCABULARY.md`.
 
 ## Scope
-This file exists to make future chats in `C:\Users\techai\PKA testing` start with folder memory, not a blank slate.
+This file exists to make future chats in this PKA workspace start with folder memory, not a blank slate.

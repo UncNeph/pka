@@ -71,7 +71,8 @@ PKA/
 │   └── processed/         ← Completed tasks archived here
 │
 ├── Owner's Inbox/         ← All completed deliverables land here
-│   └── owner.md           ← Your profile — agents read this before every task
+│   └── workspace.md       ← Local owner and workspace context, ignored by git
+│   └── workspace.md.example ← Template for your local workspace context
 │   └── DELIVERY_MANIFEST.md ← Index of completed deliverables and next actions
 │
 ├── Team/
@@ -162,7 +163,7 @@ called healthy.
 
 1. **Fork this repo**
 2. **Edit `CLAUDE.md`** — replace the owner context, active projects, and design principles with your own
-3. **Edit `Owner's Inbox/owner.md`** — your profile: role, communication style, priorities
+3. **Create `Owner's Inbox/workspace.md` from `Owner's Inbox/workspace.md.example`** — your local profile, operating context, communication style, and priorities
 4. **Open the folder in Claude Code** — AXIOM activates automatically on session start
 5. **Drop your first task in `Team Inbox/`** and tell AXIOM what you want done
 

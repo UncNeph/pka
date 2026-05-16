@@ -1,0 +1,31 @@
+# Workspace Context
+
+Copy this file to `Owner's Inbox/workspace.md` and customize it for your local
+PKA workspace. The real `workspace.md` is ignored by git so personal context,
+private priorities, and machine-specific notes stay local.
+
+## Owner Profile
+
+- Name:
+- Role:
+- Communication preferences:
+- Decision priorities:
+
+## Workspace Purpose
+
+- What this PKA workspace is responsible for:
+- What kinds of tasks should be routed through AXIOM:
+- What kinds of tasks are out of scope:
+
+## Operating Preferences
+
+- Preferred deliverable style:
+- Validation expectations:
+- Risk tolerance:
+- Escalation rules:
+
+## Active Context
+
+- Current projects:
+- Important constraints:
+- Known systems, repositories, or environments:
