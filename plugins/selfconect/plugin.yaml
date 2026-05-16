@@ -1,19 +1,21 @@
 name: selfconect
-version: 0.1.0
-description: Windows inter-terminal injection through PostMessage for agent-to-agent communication.
+version: 0.10.0
+description: Inter-terminal injection for Windows - find terminals by title, inject text, read terminal content via UIA accessibility tree, submit Claude Code prompts programmatically.
 category: communication
 platform: windows
 requires:
   - type: python
-    value: ">=3.11"
-  - type: env
-    value: "Windows desktop session"
+    value: ">=3.10"
+  - type: python_package
+    value: pywin32>=306
 provides:
-  agents: []
-  hooks: []
-  scripts: []
   capabilities:
     - inter-terminal-injection
-    - windows-postmessage
+    - terminal-text-read
+    - claude-input-submit
+  agents: []
+  hooks: []
+  scripts:
+    - plugins/selfconect/self_connect.py
 entry:
-docs: README.md
+docs: plugins/selfconect/README.md

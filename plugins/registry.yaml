@@ -1,1 +1,6 @@
-plugins: []
+plugins:
+  - name: selfconect
+    version: 0.10.0
+    installed: true
+    path: plugins/selfconect
+    category: communication

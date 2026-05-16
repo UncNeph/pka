@@ -1,20 +1,26 @@
-# Selfconect Plugin Stub
+# SelfConect Plugin
 
-This plugin will add Windows inter-terminal injection as an optional PKA
-communication capability.
+Inter-terminal injection for Windows. Lets PKA agents find other terminal windows, inject text, read their output, and submit Claude Code prompts - enabling multi-terminal coordination.
 
-## User Value
+## Key Functions
 
-Users get controlled agent-to-agent terminal messaging without making terminal
-automation part of PKA core.
+- `find_target(title_keyword) -> WindowTarget` - find a terminal by window title substring
+- `send_string(target, text, char_delay=0.02)` - inject text character by character
+- `submit_claude_input(hwnd)` - submit the current input in a Claude Code TUI
+- `get_text_uia(hwnd) -> str` - read full terminal text via UIA accessibility tree
 
-## Planned Capabilities
+## Requirements
 
-- Send text to a target terminal window
-- Submit terminal input after delivery
-- Support Windows `PostMessage` based workflows
-- Keep approval and safety rules outside core PKA files
+Windows only. Requires pywin32:
 
-## Status
+```powershell
+pip install pywin32>=306
+```
 
-Stub only. No code is installed by this plugin yet.
+## Install
+
+```powershell
+pip install -r plugins/selfconect/requirements.txt
+```
+
+Register in `plugins/registry.yaml`.
